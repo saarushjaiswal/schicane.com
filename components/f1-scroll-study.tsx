@@ -362,9 +362,11 @@ export function F1ScrollStudy() {
             <h2 id="f1-title">F1 motion study</h2>
           </div>
           <p>
-            Scroll through my skills.
+            Scroll to rotate and explore my skills.
             <br />
-            Select a part to see the project behind it.
+            <span className="f1-instruction-detail">
+              Select a part for the related project.
+            </span>
           </p>
         </div>
         <div className="f1-view-label">
