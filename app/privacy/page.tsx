@@ -19,6 +19,11 @@ export default function Privacy() {
           to a server. This site does not set cookies or use browser storage for
           tracking.
         </p>
+        <p>
+          If you change the color theme, your choice is saved locally in your
+          browser so the site can remember it. That preference is not sent to a
+          server.
+        </p>
         <h2>Hosting and external links</h2>
         <p>
           This site is hosted on GitHub Pages. GitHub may process technical

@@ -2,6 +2,7 @@
 
 - Keep all task changes inside this repository.
 - Preserve the charcoal, warm paper, and gold palette.
+- The owner added a white/light theme. All gold text and accents use #E1B34B. Use the latest transparent logo PNGs in both themes; do not blend or crop them using the dimensions of the earlier black-background files. Preserve light/dark switching and the browser-local preference.
 - Use the user-supplied `public/brand/schicane-gold-wordmark.png` as the primary logo. Use `public/brand/schicane-gold-symbol.png` for compact placements and the favicon. Preserve both originals; do not replace them with typeset text or redraw them.
 - `components/brand-logo.tsx` is the shared logo implementation.
 - Body copy, navigation, and controls use self-hosted Raleway. Keep its SIL OFL notice.

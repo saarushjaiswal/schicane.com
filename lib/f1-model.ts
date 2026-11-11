@@ -4,7 +4,7 @@ import * as THREE from "three";
 export function createF1Model() {
   const car = new THREE.Group();
   const gold = new THREE.MeshPhysicalMaterial({
-    color: 0xc6a660,
+    color: 0xe1b34b,
     metalness: 0.62,
     roughness: 0.3,
     clearcoat: 0.7,
@@ -424,7 +424,7 @@ export function createF1Model() {
     }
 
   const leaderMaterial = new THREE.LineDashedMaterial({
-    color: 0xc6a660,
+    color: 0xe1b34b,
     transparent: true,
     opacity: 0,
     dashSize: 0.07,

@@ -59,6 +59,13 @@ if (home(".project-row").length !== 16)
     "Home must render all 16 populated project entries without JavaScript",
   );
 if (!home("input[type=search]").length) errors.push("Project search missing");
+if (!home("#theme-toggle").length || !home("#theme-init").length)
+  errors.push("Theme switch or pre-paint preference initialization missing");
+for (const name of ["schicane-gold-wordmark.png", "schicane-gold-symbol.png"]) {
+  const png = readFileSync(join(root, "brand", name));
+  if (![4, 6].includes(png[25]))
+    errors.push(`${name}: expected the owner's transparent PNG`);
+}
 if (
   home(".f1-view-buttons button").length !== 4 ||
   !home(".f1-scrub input[type=range]").length

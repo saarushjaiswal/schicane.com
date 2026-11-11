@@ -71,18 +71,13 @@ export default function Home() {
                   <circle cx="56" cy="200" r="3" fill="currentColor" />
                 </g>
               </svg>
-              <svg
+              <img
                 className="emblem-logo"
-                viewBox="25 24 492 202"
-                role="img"
-                aria-label="Schicane S logo"
-              >
-                <image
-                  href="/brand/schicane-gold-symbol.png"
-                  width="557"
-                  height="262"
-                />
-              </svg>
+                src="/brand/schicane-gold-symbol.png?v=3"
+                width="457"
+                height="180"
+                alt="Schicane S logo"
+              />
             </div>
             <p>Schicane is the name I use for my personal projects.</p>
           </div>

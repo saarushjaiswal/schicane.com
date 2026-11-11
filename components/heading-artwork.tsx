@@ -17,12 +17,12 @@ export function HeadingArtwork({ text }: { text: string }) {
       <picture aria-hidden="true">
         <source
           media="(max-width: 700px)"
-          srcSet={`${entry.compact.src}?v=2`}
+          srcSet={`${entry.compact.src}?v=3`}
           width={entry.compact.width}
           height={entry.compact.height}
         />
         <img
-          src={`${entry.src}?v=2`}
+          src={`${entry.src}?v=3`}
           alt=""
           width={entry.width}
           height={entry.height}

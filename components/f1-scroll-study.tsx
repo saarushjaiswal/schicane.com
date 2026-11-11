@@ -87,7 +87,7 @@ function CarFallback() {
       role="img"
       aria-label="Top view of a gold open-wheel concept car"
     >
-      <g fill="#202620" stroke="#c6a660" strokeWidth="2">
+      <g fill="#202620" stroke="#e1b34b" strokeWidth="2">
         <path d="M255 154H665L728 178V242L665 266H255L190 238V182Z" />
         <rect x="180" y="80" width="105" height="83" rx="24" />
         <rect x="180" y="257" width="105" height="83" rx="24" />
@@ -95,12 +95,12 @@ function CarFallback() {
         <rect x="610" y="257" width="105" height="83" rx="24" />
         <path
           d="M145 189L418 172L442 196V224L418 248L145 231Z"
-          fill="#c6a660"
+          fill="#e1b34b"
         />
         <path d="M145 112H175V308H145ZM725 122H766V298H725Z" />
         <path
           d="M448 169Q405 210 448 251L604 238L652 210L604 182Z"
-          fill="#c6a660"
+          fill="#e1b34b"
         />
         <ellipse cx="446" cy="210" rx="44" ry="29" fill="#101210" />
         <path d="M232 163L385 195M232 257L385 225M662 163L557 195M662 257L557 225" />

@@ -1,13 +1,13 @@
 # Schicane brand resources
 
-The canonical logos are the two original PNGs supplied by Aarush:
+The canonical logos are the latest transparent PNGs supplied by Aarush:
 
 - `schicane-gold-wordmark.png`: primary Schicane logo. Use whenever space permits.
 - `schicane-gold-symbol.png`: standalone S with arrows. Use for compact placements and the favicon.
 
-Preserve the original files. Do not redraw the name in a font as a substitute for the logo. The shared BrandLogo component frames the PNGs with SVG viewports without altering the artwork. CSS blends their black backgrounds with the site's dark surface.
+Preserve the supplied files. The current wordmark is 1793 × 201 and the S is 457 × 180, both with alpha transparency. Do not redraw the name in a font as a substitute for the logo. The shared BrandLogo component fits the full wordmark or compact S without cropping or blend modes, so both work on dark and white backgrounds.
 
-`public/icon.svg` embeds the supplied S artwork in a square viewport. The social preview uses the full wordmark.
+`public/icon.svg` and the SVG/PNG/ICO favicon variants embed the supplied S with a transparent background. The social preview uses the full wordmark. Gold text and accents use #E1B34B.
 
 ## Typography
 

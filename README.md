@@ -2,7 +2,7 @@
 
 Aarush Jaiswal’s personal portfolio at [schicane.com](https://schicane.com).
 
-Built with Next.js, React, and TypeScript; exported as static HTML for GitHub Pages. The original charcoal (#101210), warm paper (#f4f2ec), and gold (#c6a660) palette is retained. No analytics, tracking cookies, external fonts, newsletter signup, paid services, or contact form.
+Built with Next.js, React, and TypeScript; exported as static HTML for GitHub Pages. The original charcoal (#101210), warm paper (#f4f2ec), and gold (#e1b34b) palette is retained. No analytics, tracking cookies, external fonts, newsletter signup, paid services, or contact form.
 
 ## Development
 
@@ -59,3 +59,7 @@ References read during implementation: Anime.js getting-started, React integrati
 The car study is a résumé-backed navigation device: software/autonomy, AI/data, robotics/controls, and web tools, each with real project or experience links. Keep these chapter descriptions aligned with the owner's supplied résumé and public repositories. The original résumé is not published.
 
 Project names use wrapping Raleway text. Retained display-heading artwork was regenerated with FontTools; verification checks SVG paths for invalid coordinates. Do not restore clipping-mask heading reveals. Topic marquee arrows are actual links; the strip pauses for mouse and keyboard interaction.
+
+## Light and dark themes
+
+The header theme switch changes the site between charcoal and white backgrounds. The selected theme is stored locally under schicane-theme and initialized before paint. All gold text uses #E1B34B. The latest owner-supplied transparent wordmark and S artwork are used across the header, footer, hero, social preview, and favicon variants.
