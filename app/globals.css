@@ -1773,3 +1773,768 @@ a:hover {
   text-decoration: underline;
   text-underline-offset: 4px;
 }
+/* Brand typography and supplied artwork. */
+@font-face {
+  font-family: "Raleway";
+  src: url("/fonts/raleway-variable.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+}
+body {
+  font-family: "Raleway", Arial, sans-serif;
+  font-weight: 400;
+}
+h1,
+h2,
+h3 {
+  font-family: "Raleway", Arial, sans-serif;
+  font-weight: 650;
+}
+.eyebrow,
+.hero-edition,
+.project-subject,
+.project-meta,
+.result-count,
+.workflow-visual li > span,
+.about-notes dt {
+  font-family: "Raleway", Arial, sans-serif;
+}
+.site-header .wordmark,
+.footer-main .wordmark {
+  display: block;
+  flex-shrink: 0;
+  line-height: 0;
+}
+.brand-logo {
+  display: block;
+  width: 276px;
+  height: 38px;
+  mix-blend-mode: lighten;
+}
+.brand-logo svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.brand-logo .brand-logo-compact {
+  display: none;
+}
+.personal-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  align-self: stretch;
+  border-block: 1px solid var(--rule);
+  min-width: 0;
+  padding: 30px 0;
+}
+.personal-brand svg {
+  display: block;
+  width: 100%;
+  max-width: 340px;
+  mix-blend-mode: lighten;
+}
+.personal-brand p {
+  font-size: 13px;
+  line-height: 1.8;
+  color: var(--muted);
+  max-width: 250px;
+  text-align: center;
+  margin: 22px 0 0;
+}
+.portfolio-hero-grid {
+  grid-template-columns: minmax(0, 1.65fr) minmax(0, 1fr);
+  gap: 70px;
+  padding-block: 60px;
+}
+.portfolio-hero h1 {
+  font-size: clamp(36px, 4.4vw, 64px);
+  font-weight: 650;
+  letter-spacing: -0.025em;
+  line-height: 1.23;
+}
+.portfolio-hero .hero-description {
+  max-width: 560px;
+  font-size: 17px;
+}
+.portfolio-section-heading h2 {
+  font-weight: 650;
+}
+.featured-copy h3,
+.secondary-feature h3,
+.project-details h3 {
+  font-weight: 600;
+}
+.about-grid h2 {
+  font-size: clamp(30px, 3.4vw, 44px);
+  font-weight: 650;
+}
+.contact-section h2 {
+  font-size: clamp(36px, 4.5vw, 60px);
+  font-weight: 650;
+  letter-spacing: -0.025em;
+}
+@media (max-width: 1000px) {
+  .portfolio-hero-grid {
+    gap: 35px;
+  }
+  .brand-logo {
+    width: 240px;
+    height: 34px;
+  }
+}
+@media (max-width: 700px) {
+  .brand-logo {
+    width: 76px;
+    height: 36px;
+  }
+  .brand-logo .brand-logo-full {
+    display: none;
+  }
+  .brand-logo .brand-logo-compact {
+    display: block;
+  }
+  .footer-main .brand-logo {
+    width: 240px;
+    height: 34px;
+  }
+  .footer-main .brand-logo .brand-logo-full {
+    display: block;
+  }
+  .footer-main .brand-logo .brand-logo-compact {
+    display: none;
+  }
+  .portfolio-hero-grid {
+    grid-template-columns: minmax(0, 1fr);
+    padding-block: 40px;
+    gap: 30px;
+  }
+  .portfolio-hero h1 {
+    font-size: clamp(32px, 7.5vw, 48px);
+    line-height: 1.25;
+    letter-spacing: -0.02em;
+  }
+  .portfolio-hero .hero-description {
+    font-size: 15px;
+  }
+  .personal-brand {
+    display: none;
+  }
+  .portfolio-section-heading h2 {
+    font-size: 28px;
+  }
+  .contact-section h2 {
+    font-size: 35px;
+  }
+}
+/* Fixed, complete heading artwork exported from the supplied desktop font. */
+.heading-art {
+  display: inline-block;
+  width: var(--art-width);
+  max-width: 100%;
+  vertical-align: middle;
+}
+.heading-art picture,
+.heading-art img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.heading-readable {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+.hero-greeting {
+  display: block;
+  font:
+    500 21px/1.5 "Raleway",
+    Arial,
+    sans-serif;
+  color: var(--paper);
+  letter-spacing: 0;
+  margin-bottom: 23px;
+}
+.portfolio-hero h1 > .heading-art {
+  display: block;
+  max-width: 100%;
+  margin-bottom: 13px;
+}
+.portfolio-hero h1 {
+  font-size: clamp(35px, 5.3vw, 67px);
+}
+.portfolio-section-heading h2,
+.about-grid h2,
+.contact-section h2 {
+  font-size: 28px;
+  letter-spacing: 0;
+}
+.featured-copy h3 {
+  font-size: 25px;
+}
+.secondary-feature h3 {
+  font-size: 20px;
+}
+.project-details h3 {
+  font-size: 20px;
+}
+.project-details h3 a > .heading-art {
+  font-size: inherit;
+  color: inherit;
+  margin-left: 0;
+}
+.project-details h3 a > span:not(.heading-art) {
+  font-size: 16px;
+  color: var(--gold);
+  margin-left: 9px;
+}
+.project-details h3 a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.project-details {
+  min-width: 0;
+}
+@media (max-width: 700px) {
+  .heading-art {
+    width: var(--art-compact-width);
+  }
+  .portfolio-hero h1 {
+    font-size: clamp(34px, 9vw, 48px);
+  }
+  .portfolio-section-heading h2,
+  .about-grid h2,
+  .contact-section h2 {
+    font-size: 26px;
+  }
+  .project-details h3 {
+    font-size: 21px;
+  }
+  .hero-greeting {
+    font-size: 18px;
+    margin-bottom: 18px;
+  }
+  .portfolio-hero h1 > .heading-art {
+    margin-bottom: 10px;
+  }
+}
+/* Motion layer inspired by Anime.js, using Schicane's own branding. */
+.kinetic-emblem {
+  width: 100%;
+  max-width: 390px;
+  aspect-ratio: 1;
+  position: relative;
+  display: grid;
+  place-items: center;
+  color: var(--gold);
+  isolation: isolate;
+  background: var(--ink);
+}
+.personal-brand .emblem-orbits {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  mix-blend-mode: normal;
+}
+.emblem-orbits g {
+  transform-box: view-box;
+  transform-origin: 200px 200px;
+}
+.personal-brand .emblem-logo {
+  position: relative;
+  width: 73%;
+  max-width: none;
+  z-index: 1;
+}
+.personal-brand {
+  border: none;
+  padding-block: 0;
+}
+.personal-brand p {
+  margin-top: 6px;
+}
+.motion-marquee {
+  margin-top: 40px;
+  border-block: 1px solid var(--rule);
+  overflow: hidden;
+  padding-block: 25px;
+  color: var(--gold);
+}
+.marquee-track {
+  display: flex;
+  width: max-content;
+}
+.marquee-copy {
+  display: flex;
+  gap: 55px;
+  align-items: center;
+  padding-right: 55px;
+  flex-shrink: 0;
+}
+.marquee-copy span {
+  font-size: 13px;
+  letter-spacing: 3px;
+  font-weight: 600;
+}
+.marquee-copy b {
+  font-size: 24px;
+  font-weight: 400;
+}
+.reading-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  z-index: 25;
+  pointer-events: none;
+  display: none;
+}
+.reading-progress-fill {
+  width: 100%;
+  height: 100%;
+  background: var(--gold);
+  transform: scaleX(0);
+  transform-origin: left;
+}
+.motion-enabled .reading-progress {
+  display: block;
+}
+.motion-toggle {
+  position: fixed;
+  bottom: 18px;
+  right: 20px;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  background: var(--ink);
+  border: 1px solid #676d5d;
+  color: var(--paper);
+  padding: 10px 15px;
+  min-height: 44px;
+  font-size: 11px;
+  letter-spacing: 0.3px;
+}
+.motion-toggle-bars {
+  display: flex;
+  gap: 3px;
+  align-items: center;
+  height: 16px;
+}
+.motion-toggle-bars i {
+  display: block;
+  width: 2px;
+  height: 5px;
+  background: var(--gold);
+}
+.motion-enabled .motion-toggle-bars i {
+  animation: motion-bar 1s ease-in-out infinite alternate;
+}
+.motion-enabled .motion-toggle-bars i:nth-child(2) {
+  animation-delay: -0.4s;
+}
+.motion-enabled .motion-toggle-bars i:nth-child(3) {
+  animation-delay: -0.7s;
+}
+@keyframes motion-bar {
+  to {
+    height: 16px;
+  }
+}
+.motion-enabled .project-row {
+  position: relative;
+  transition: background-color 0.35s;
+}
+.motion-enabled .project-row::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -1px;
+  height: 1px;
+  background: var(--gold);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+}
+.motion-enabled .project-row:hover {
+  background-color: #191c17;
+}
+.motion-enabled .project-row:hover::after,
+.motion-enabled .project-row:focus-within::after {
+  transform: scaleX(1);
+}
+.motion-enabled .primary-nav a {
+  position: relative;
+}
+.motion-enabled .primary-nav a::after {
+  content: "";
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: var(--gold);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.motion-enabled .primary-nav a:hover::after,
+.motion-enabled .primary-nav a:focus-visible::after {
+  transform: scaleX(1);
+}
+.motion-enabled .button {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+.motion-enabled .button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #dfc58f;
+  transform: translateX(-105%) skewX(-15deg);
+  transition: transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: -1;
+}
+.motion-enabled .button:hover::before {
+  transform: translateX(0) skewX(0);
+}
+.motion-enabled .button:hover {
+  background: var(--gold);
+}
+.motion-enabled .text-link span,
+.motion-enabled .repo-link span {
+  display: inline-block;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.motion-enabled .text-link:hover span,
+.motion-enabled .repo-link:hover span {
+  transform: translate(3px, -3px);
+}
+.portfolio-footer {
+  padding-bottom: 50px;
+}
+@media (max-width: 700px) {
+  .personal-brand {
+    display: flex;
+  }
+  .kinetic-emblem {
+    max-width: 260px;
+  }
+  .personal-brand p {
+    font-size: 12px;
+  }
+  .motion-marquee {
+    margin-top: 28px;
+    padding-block: 17px;
+  }
+  .marquee-copy {
+    gap: 30px;
+    padding-right: 30px;
+  }
+  .marquee-copy span {
+    font-size: 10px;
+    letter-spacing: 2px;
+  }
+  .motion-toggle {
+    right: 12px;
+    bottom: 12px;
+    font-size: 10px;
+    padding: 8px 11px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-enabled .motion-toggle-bars i {
+    animation: none;
+  }
+  .motion-enabled .project-row,
+  .motion-enabled .project-row::after,
+  .motion-enabled .primary-nav a::after,
+  .motion-enabled .button::before,
+  .motion-enabled .text-link span,
+  .motion-enabled .repo-link span {
+    transition: none;
+  }
+}
+/* Scroll-driven open-wheel concept car. */
+.f1-scroll-section {
+  height: 380svh;
+  position: relative;
+  margin-top: 60px;
+  background: #151914;
+  border-block: 1px solid var(--rule);
+}
+.f1-stage {
+  height: 100svh;
+  min-height: 660px;
+  position: sticky;
+  top: 0;
+  isolation: isolate;
+  overflow: clip;
+}
+.f1-stage-heading {
+  position: absolute;
+  top: 45px;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  gap: 25px;
+  pointer-events: none;
+}
+.f1-stage-heading .eyebrow {
+  color: var(--gold);
+  font-size: 10px;
+}
+.f1-stage-heading h2 {
+  font:
+    600 clamp(30px, 4vw, 48px)/1.2 "Raleway",
+    Arial,
+    sans-serif;
+  letter-spacing: -1px;
+  margin-top: 14px;
+}
+.f1-stage-heading > p {
+  font-size: 13px;
+  line-height: 1.8;
+  color: var(--muted);
+  text-align: right;
+}
+.f1-view-label {
+  position: absolute;
+  z-index: 2;
+  left: max(56px, calc((100% - 1280px) / 2));
+  top: 180px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  font-size: 11px;
+  pointer-events: none;
+}
+.f1-view-label > span {
+  color: var(--gold);
+  letter-spacing: 2px;
+}
+.f1-view-label > strong {
+  color: var(--muted);
+  font-weight: 400;
+}
+.f1-canvas {
+  position: absolute;
+  inset: 110px 0 155px;
+  z-index: 0;
+}
+.f1-canvas canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.f1-fallback-wrap {
+  position: absolute;
+  inset: 190px 0 200px;
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  pointer-events: none;
+}
+.f1-fallback {
+  width: min(900px, 85vw);
+  height: auto;
+}
+.f1-fallback-wrap p {
+  font-size: 12px;
+  color: var(--muted);
+}
+.f1-stage-footer {
+  position: absolute;
+  bottom: 128px;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 25px;
+  pointer-events: none;
+}
+.f1-caption > p {
+  font-size: 14px;
+  color: var(--paper);
+  margin: 0 0 8px;
+  line-height: 1.6;
+}
+.f1-caption > span {
+  font-size: 11px;
+  color: var(--muted);
+}
+.f1-skip {
+  pointer-events: auto;
+  color: var(--gold);
+  font-size: 12px;
+  padding: 12px 0;
+  white-space: nowrap;
+}
+.f1-skip span {
+  margin-left: 20px;
+}
+.f1-controls {
+  position: absolute;
+  bottom: 34px;
+  left: 0;
+  right: 0;
+  z-index: 3;
+}
+.f1-view-buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+.f1-view-buttons button {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  text-align: left;
+  color: var(--muted);
+  border: 0;
+  border-top: 1px solid #4a5143;
+  padding: 15px 0 0;
+  min-height: 44px;
+  background: transparent;
+  font-size: 12px;
+}
+.f1-view-buttons button span {
+  font-size: 10px;
+  color: var(--muted);
+}
+.f1-view-buttons button[aria-pressed="true"] {
+  color: var(--gold);
+  border-top-color: var(--gold);
+}
+.f1-view-buttons button[aria-pressed="true"] span {
+  color: var(--gold);
+}
+.f1-view-buttons button:disabled {
+  cursor: default;
+  opacity: 0.55;
+}
+.f1-scrub {
+  display: block;
+  margin-top: 12px;
+}
+.f1-scrub input {
+  width: 100%;
+  display: block;
+  height: 12px;
+  accent-color: var(--gold);
+  cursor: ew-resize;
+}
+.f1-unavailable {
+  height: 100svh;
+}
+.f1-unavailable .f1-stage {
+  position: relative;
+}
+@media (max-width: 1100px) {
+  .f1-view-label {
+    left: 36px;
+  }
+}
+@media (max-width: 700px) {
+  .f1-scroll-section {
+    height: 330svh;
+    margin-top: 35px;
+  }
+  .f1-stage {
+    min-height: 670px;
+  }
+  .f1-stage-heading {
+    top: 30px;
+    display: block;
+  }
+  .f1-stage-heading h2 {
+    font-size: 30px;
+  }
+  .f1-stage-heading > p {
+    text-align: left;
+    font-size: 11px;
+    margin-top: 15px;
+  }
+  .f1-stage-heading > p br {
+    display: none;
+  }
+  .f1-view-label {
+    left: 20px;
+    top: 165px;
+    gap: 12px;
+    font-size: 10px;
+  }
+  .f1-canvas {
+    inset: 190px 0 210px;
+  }
+  .f1-stage-footer {
+    bottom: 150px;
+    display: block;
+  }
+  .f1-caption > p {
+    font-size: 12px;
+    max-width: 300px;
+  }
+  .f1-caption > span {
+    font-size: 10px;
+  }
+  .f1-skip {
+    display: inline-block;
+    font-size: 10px;
+    padding-top: 8px;
+    padding-bottom: 0;
+  }
+  .f1-controls {
+    bottom: 58px;
+  }
+  .f1-view-buttons {
+    gap: 12px;
+  }
+  .f1-view-buttons button {
+    display: block;
+    font-size: 9px;
+    line-height: 1.5;
+    padding-top: 9px;
+  }
+  .f1-view-buttons button span {
+    display: block;
+    margin-bottom: 4px;
+    font-size: 9px;
+  }
+  .f1-fallback-wrap {
+    inset: 200px 0 245px;
+  }
+  .f1-fallback-wrap p {
+    font-size: 10px;
+  }
+  .f1-unavailable {
+    height: auto;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .f1-scroll-section {
+    height: auto;
+  }
+  .f1-stage {
+    position: relative;
+  }
+}

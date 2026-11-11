@@ -110,8 +110,8 @@ export const projects: Project[] = [
     repo: "schicane.com",
     category: "Web",
     description:
-      "This portfolio. A statically exported Next.js site with a source-backed project directory.",
-    stack: "Next.js / React / TypeScript",
+      "This portfolio, including an original scroll-driven 3D open-wheel car study and a source-backed project directory.",
+    stack: "Next.js / Three.js / Anime.js",
   },
   {
     name: "Runtime Components",

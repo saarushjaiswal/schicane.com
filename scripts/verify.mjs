@@ -28,11 +28,17 @@ for (const file of [
   "rss.xml",
   "sitemap.xml",
   "robots.txt",
+  "brand/schicane-gold-wordmark.png",
+  "brand/schicane-gold-symbol.png",
+  "fonts/raleway-variable.ttf",
+  "fonts/raleway-OFL.txt",
 ])
   if (!existsSync(join(root, file))) errors.push(`Missing ${file}`);
 if (readFileSync(join(root, "CNAME"), "utf8").trim() !== "schicane.com")
   errors.push("Custom domain changed");
 const html = walk(root).filter((f) => f.endsWith(".html"));
+if (walk(root).some((file) => /ethnocentric.*\.(otf|ttf|woff2?)$/i.test(file)))
+  errors.push("The desktop-only Ethnocentric font must not be distributed");
 const home = load(readFileSync(join(root, "index.html"), "utf8"));
 for (const id of ["projects", "about", "contact"]) {
   if (!home(`[id="${id}"]`).length) errors.push(`Home missing section: ${id}`);
@@ -70,32 +76,36 @@ for (const file of html) {
       ?.startsWith("https://schicane.com/")
   )
     errors.push(`${pathname}: missing canonical`);
-  $("a[href],img[src],script[src],link[href]").each((_, el) => {
-    const value = $(el).attr("href") ?? $(el).attr("src");
-    if (!value || value.startsWith("http:")) {
-      errors.push(`${pathname}: insecure/empty URL ${value}`);
-      return;
-    }
-    if (!value.startsWith("/") && !value.startsWith("#")) return;
-    const url = new URL(value, "https://schicane.com" + pathname);
-    let target = join(root, decodeURIComponent(url.pathname));
-    if (url.pathname.endsWith("/")) target = join(target, "index.html");
-    if (!existsSync(target)) {
-      errors.push(`${pathname}: broken link ${value}`);
-      return;
-    }
-    if (url.hash && target.endsWith(".html")) {
-      const doc = load(readFileSync(target, "utf8"));
-      if (
-        !doc("[id]")
-          .toArray()
-          .some(
-            (e) => doc(e).attr("id") === decodeURIComponent(url.hash.slice(1)),
-          )
-      )
-        errors.push(`${pathname}: missing anchor ${value}`);
-    }
-  });
+  $("a[href],img[src],script[src],link[href],image[href],source[srcset]").each(
+    (_, el) => {
+      const value =
+        $(el).attr("href") ?? $(el).attr("src") ?? $(el).attr("srcset");
+      if (!value || value.startsWith("http:")) {
+        errors.push(`${pathname}: insecure/empty URL ${value}`);
+        return;
+      }
+      if (!value.startsWith("/") && !value.startsWith("#")) return;
+      const url = new URL(value, "https://schicane.com" + pathname);
+      let target = join(root, decodeURIComponent(url.pathname));
+      if (url.pathname.endsWith("/")) target = join(target, "index.html");
+      if (!existsSync(target)) {
+        errors.push(`${pathname}: broken link ${value}`);
+        return;
+      }
+      if (url.hash && target.endsWith(".html")) {
+        const doc = load(readFileSync(target, "utf8"));
+        if (
+          !doc("[id]")
+            .toArray()
+            .some(
+              (e) =>
+                doc(e).attr("id") === decodeURIComponent(url.hash.slice(1)),
+            )
+        )
+          errors.push(`${pathname}: missing anchor ${value}`);
+      }
+    },
+  );
   lines.push(`PASS ${pathname}`);
 }
 const rss = load(readFileSync(join(root, "rss.xml"), "utf8"), {

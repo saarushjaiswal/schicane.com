@@ -18,6 +18,9 @@ export function SiteNav() {
         className={open ? "primary-nav is-open" : "primary-nav"}
         aria-label="Main navigation"
       >
+        <a href="/#f1-study" onClick={() => setOpen(false)}>
+          F1 study
+        </a>
         <a href="/#projects" onClick={() => setOpen(false)}>
           Projects
         </a>

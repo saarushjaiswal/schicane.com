@@ -1,0 +1,222 @@
+{
+  "Aarush": {
+    "src": "/brand/headings/aarush.svg",
+    "width": 616.5,
+    "height": 77.1,
+    "compact": {
+      "src": "/brand/headings/aarush.svg",
+      "width": 616.5,
+      "height": 77.1
+    }
+  },
+  "Jaiswal": {
+    "src": "/brand/headings/jaiswal.svg",
+    "width": 616.4,
+    "height": 77.1,
+    "compact": {
+      "src": "/brand/headings/jaiswal.svg",
+      "width": 616.4,
+      "height": 77.1
+    }
+  },
+  "Featured projects": {
+    "src": "/brand/headings/featured-projects.svg",
+    "width": 1470.2,
+    "height": 77.1,
+    "compact": {
+      "src": "/brand/headings/featured-projects-compact.svg",
+      "width": 717.7,
+      "height": 195.1
+    }
+  },
+  "All projects": {
+    "src": "/brand/headings/all-projects.svg",
+    "width": 1027.4,
+    "height": 77.1,
+    "compact": {
+      "src": "/brand/headings/all-projects.svg",
+      "width": 1027.4,
+      "height": 77.1
+    }
+  },
+  "About me": {
+    "src": "/brand/headings/about-me.svg",
+    "width": 757.9,
+    "height": 77.1,
+    "compact": {
+      "src": "/brand/headings/about-me.svg",
+      "width": 757.9,
+      "height": 77.1
+    }
+  },
+  "Get in touch": {
+    "src": "/brand/headings/get-in-touch.svg",
+    "width": 931.9,
+    "height": 77.2,
+    "compact": {
+      "src": "/brand/headings/get-in-touch.svg",
+      "width": 931.9,
+      "height": 77.2
+    }
+  },
+  "F1 Race Recaps": {
+    "src": "/brand/headings/f1-race-recaps.svg",
+    "width": 1161.3,
+    "height": 76,
+    "compact": {
+      "src": "/brand/headings/f1-race-recaps-compact.svg",
+      "width": 576.6,
+      "height": 194
+    }
+  },
+  "CrewBrew": {
+    "src": "/brand/headings/crewbrew.svg",
+    "width": 811.3,
+    "height": 77.1,
+    "compact": {
+      "src": "/brand/headings/crewbrew.svg",
+      "width": 811.3,
+      "height": 77.1
+    }
+  },
+  "Reefscape": {
+    "src": "/brand/headings/reefscape.svg",
+    "width": 828.9,
+    "height": 76,
+    "compact": {
+      "src": "/brand/headings/reefscape.svg",
+      "width": 828.9,
+      "height": 76
+    }
+  },
+  "TigerTrax": {
+    "src": "/brand/headings/tigertrax.svg",
+    "width": 809.3,
+    "height": 76,
+    "compact": {
+      "src": "/brand/headings/tigertrax.svg",
+      "width": 809.3,
+      "height": 76
+    }
+  },
+  "Scouting PASS draft": {
+    "src": "/brand/headings/scouting-pass-draft.svg",
+    "width": 1640.1,
+    "height": 77.2,
+    "compact": {
+      "src": "/brand/headings/scouting-pass-draft-compact.svg",
+      "width": 902.5,
+      "height": 194
+    }
+  },
+  "AP Research Survey": {
+    "src": "/brand/headings/ap-research-survey.svg",
+    "width": 1645,
+    "height": 77.1,
+    "compact": {
+      "src": "/brand/headings/ap-research-survey-compact.svg",
+      "width": 1011.8,
+      "height": 195.1
+    }
+  },
+  "FHS AI": {
+    "src": "/brand/headings/fhs-ai.svg",
+    "width": 452.7,
+    "height": 76,
+    "compact": {
+      "src": "/brand/headings/fhs-ai.svg",
+      "width": 452.7,
+      "height": 76
+    }
+  },
+  "NextUp Stats Showdown": {
+    "src": "/brand/headings/nextup-stats-showdown.svg",
+    "width": 1879.5,
+    "height": 77.2,
+    "compact": {
+      "src": "/brand/headings/nextup-stats-showdown-compact.svg",
+      "width": 1017.6,
+      "height": 195.2
+    }
+  },
+  "CrewBrew FHS": {
+    "src": "/brand/headings/crewbrew-fhs.svg",
+    "width": 1120,
+    "height": 77.1,
+    "compact": {
+      "src": "/brand/headings/crewbrew-fhs-compact.svg",
+      "width": 811.3,
+      "height": 194
+    }
+  },
+  "Think-Co": {
+    "src": "/brand/headings/think-co.svg",
+    "width": 621.1,
+    "height": 77.2,
+    "compact": {
+      "src": "/brand/headings/think-co.svg",
+      "width": 621.1,
+      "height": 77.2
+    }
+  },
+  "Schicane, early site": {
+    "src": "/brand/headings/schicane-early-site.svg",
+    "width": 1553,
+    "height": 85.6,
+    "compact": {
+      "src": "/brand/headings/schicane-early-site-compact.svg",
+      "width": 794.7,
+      "height": 194
+    }
+  },
+  "Schicane.com": {
+    "src": "/brand/headings/schicane-com.svg",
+    "width": 1037.9,
+    "height": 77.2,
+    "compact": {
+      "src": "/brand/headings/schicane-com.svg",
+      "width": 1037.9,
+      "height": 77.2
+    }
+  },
+  "Runtime Components": {
+    "src": "/brand/headings/runtime-components.svg",
+    "width": 1628.5,
+    "height": 77.2,
+    "compact": {
+      "src": "/brand/headings/runtime-components-compact.svg",
+      "width": 967.8,
+      "height": 195.2
+    }
+  },
+  "Pair programming assignment": {
+    "src": "/brand/headings/pair-programming-assignment.svg",
+    "width": 2410.3,
+    "height": 77.2,
+    "compact": {
+      "src": "/brand/headings/pair-programming-assignment-compact.svg",
+      "width": 1090.8,
+      "height": 313.2
+    }
+  },
+  "Open Lovable": {
+    "src": "/brand/headings/open-lovable.svg",
+    "width": 1048.8,
+    "height": 77.2,
+    "compact": {
+      "src": "/brand/headings/open-lovable.svg",
+      "width": 1048.8,
+      "height": 77.2
+    }
+  },
+  "FRC 5010 practice": {
+    "src": "/brand/headings/frc-5010-practice.svg",
+    "width": 1358.7,
+    "height": 77.1,
+    "compact": {
+      "src": "/brand/headings/frc-5010-practice-compact.svg",
+      "width": 689.5,
+      "height": 194
+    }
+  }
+}

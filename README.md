@@ -35,3 +35,15 @@ Earlier AI publication routes are retained for existing inbound links and marked
 ## Deployment
 
 Pushes to `main` run tests, build, type checking, and static verification before deploying through the existing GitHub Pages workflow. `CNAME` remains `schicane.com`. No new hosting service or external account is needed.
+
+## Brand and typography update
+
+The supplied gold wordmark and compact S are preserved in public/brand. The shared BrandLogo component uses the full logo on wide layouts and the S when space is limited. The favicon embeds the supplied S artwork.
+
+Body copy uses self-hosted Raleway with its SIL OFL notice. Ethnocentric headings are fixed SVG artwork exported from the user-supplied Regular font with accessible text equivalents. The desktop-only source font is not published. See public/brand/README.md and AGENTS.md for ongoing brand rules.
+
+The content direction references https://www.zachjordan.io/: a direct personal introduction followed by featured work and a full project list. Its wording, projects, media, and personal claims were not copied.
+
+## Animation
+
+Anime.js sequences the hero entrance, heading reveals, project rows, and interactive link motion. The hero emblem, topic marquee, and workflow accents loop only while visible. A fixed pause control disables the animation layer, and the OS reduced-motion preference disables it by default. Motion preferences stay in React state and are not saved to browser storage. All content is visible in the static HTML without JavaScript.
