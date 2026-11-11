@@ -5,3 +5,6 @@ logs/*
 !logs/README.md
 *.tsbuildinfo
 .env*
+.tools/
+.npm-cache/
+.qa/

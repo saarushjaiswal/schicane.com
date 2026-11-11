@@ -6,8 +6,6 @@ on:
   pull_request:
     branches: [main]
   workflow_dispatch:
-  schedule:
-    - cron: "15 12 * * 1"
 
 permissions:
   contents: read
@@ -68,7 +66,7 @@ jobs:
           echo "Commit: $COMMIT" >> "$GITHUB_STEP_SUMMARY"
       - name: Verify public HTTPS routes
         run: |
-          for route in / /ai/ /ai/weekly/ /about/ /methodology/ /rss.xml /sitemap.xml; do
+          for route in / /about/ /privacy/ /sitemap.xml /robots.txt; do
             curl --fail --silent --show-error --location --retry 8 --retry-all-errors --retry-delay 10 "https://schicane.com$route" -o /dev/null
             echo "HTTPS OK: $route"
           done

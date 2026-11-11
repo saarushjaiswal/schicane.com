@@ -1,27 +1,32 @@
 import type { Metadata } from "next";
+import { SiteNav } from "@/components/site-nav";
 import "./globals.css";
+const description =
+  "Aarush Jaiswal’s personal portfolio: software, AI, automation, robotics, and motorsports projects. Explore the work and its source code at Schicane.";
 export const metadata: Metadata = {
   metadataBase: new URL("https://schicane.com"),
-  title: {
-    default: "SCHICANE — Independent AI Intelligence",
-    template: "%s — SCHICANE",
-  },
-  description:
-    "Independent weekly intelligence covering the developments shaping artificial intelligence, research, industry, models and policy.",
+  title: { default: "Aarush Jaiswal | Schicane", template: "%s | Schicane" },
+  description,
   openGraph: {
     type: "website",
-    siteName: "SCHICANE",
+    siteName: "Schicane",
+    title: "Aarush Jaiswal | Schicane",
+    description,
     images: [
       {
         url: "/social.png",
         width: 1200,
         height: 630,
-        alt: "SCHICANE — AI moves fast. We tell you what mattered.",
+        alt: "Aarush Jaiswal: software, AI and robotics. Schicane personal portfolio.",
       },
     ],
   },
-  twitter: { card: "summary_large_image", images: ["/social.png"] },
-  alternates: { types: { "application/rss+xml": "/rss.xml" } },
+  twitter: {
+    card: "summary_large_image",
+    title: "Aarush Jaiswal | Schicane",
+    description,
+    images: ["/social.png"],
+  },
   icons: { icon: "/icon.svg" },
 };
 export default function Layout({ children }: { children: React.ReactNode }) {
@@ -32,40 +37,35 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           Skip to content
         </a>
         <header className="site-header">
-          <div className="shell header-inner flex items-center justify-between">
+          <div className="shell header-inner">
             <a className="wordmark" href="/" aria-label="Schicane home">
               SCHICANE<span className="brand-period">.</span>
             </a>
-            <nav aria-label="Main navigation" className="flex items-center">
-              <a href="/ai/">AI</a>
-              <a href="/about/">ABOUT</a>
-              <a href="/methodology/">METHODOLOGY</a>
-            </nav>
+            <SiteNav />
           </div>
         </header>
-        <main id="main">{children}</main>
-        <footer className="site-footer">
+        <main id="main" tabIndex={-1}>
+          {children}
+        </main>
+        <footer className="portfolio-footer">
           <div className="shell">
-            <div className="footer-top flex justify-between gap-8">
-              <div>
-                <a className="wordmark" href="/">
-                  SCHICANE<span className="brand-period">.</span>
-                </a>
-                <p>Intelligence worth your attention.</p>
-              </div>
-              <nav
-                aria-label="Footer navigation"
-                className="flex flex-wrap gap-x-8 gap-y-4"
-              >
-                <a href="/ai/weekly/">AI Weekly</a>
-                <a href="/about/">About</a>
-                <a href="/methodology/">Methodology</a>
-                <a href="/rss.xml">RSS ↗</a>
-              </nav>
+            <div className="footer-main">
+              <a className="wordmark" href="/">
+                SCHICANE<span className="brand-period">.</span>
+              </a>
+              <p>The personal project space of Aarush Jaiswal.</p>
+              <a href="/#main">Back to top ↑</a>
             </div>
-            <div className="footer-bottom flex justify-between gap-4">
-              <span>© {new Date().getUTCFullYear()} Schicane</span>
-              <span>Independent by design.</span>
+            <div className="footer-links">
+              <span>Built with curiosity. Shared with context.</span>
+              <nav aria-label="Footer navigation">
+                <a href="https://github.com/saarushjaiswal">GitHub</a>
+                <a href="https://www.linkedin.com/in/aarushjaiswal/">
+                  LinkedIn
+                </a>
+                <a href="mailto:saarushjaiswal@gmail.com">Email</a>
+                <a href="/privacy/">Privacy</a>
+              </nav>
             </div>
           </div>
         </footer>

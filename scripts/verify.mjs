@@ -20,6 +20,7 @@ for (const file of [
   "ai/index.html",
   "ai/weekly/index.html",
   "about/index.html",
+  "privacy/index.html",
   "methodology/index.html",
   "404.html",
   "CNAME",
@@ -32,6 +33,23 @@ for (const file of [
 if (readFileSync(join(root, "CNAME"), "utf8").trim() !== "schicane.com")
   errors.push("Custom domain changed");
 const html = walk(root).filter((f) => f.endsWith(".html"));
+const home = load(readFileSync(join(root, "index.html"), "utf8"));
+for (const id of ["projects", "about", "contact"]) {
+  if (!home(`[id="${id}"]`).length) errors.push(`Home missing section: ${id}`);
+}
+if (home(".project-row").length !== 16)
+  errors.push(
+    "Home must render all 16 populated project entries without JavaScript",
+  );
+if (!home("input[type=search]").length) errors.push("Project search missing");
+if (!home("a[href='mailto:saarushjaiswal@gmail.com']").length)
+  errors.push("Contact email missing");
+if (home("footer").text().includes("©"))
+  errors.push("Unrequested copyright line");
+if (home("form").length || home("iframe").length)
+  errors.push("Unexpected form or third-party embed");
+if (!home("title").text().includes("Aarush Jaiswal"))
+  errors.push("Home title must identify the portfolio owner");
 for (const file of html) {
   const $ = load(readFileSync(file, "utf8"));
   const pathname = file

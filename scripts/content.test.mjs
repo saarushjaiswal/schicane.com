@@ -1,13 +1,14 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import { mkdtempSync, mkdirSync, writeFileSync, rmSync } from "node:fs";
-import { tmpdir } from "node:os";
-import { join } from "node:path";
+import { join, resolve } from "node:path";
 import { editions, renderEdition } from "../lib/content.ts";
 
 test("publication rules protect drafts, future content, metadata and unsourced reports", () => {
   const original = process.cwd();
-  const temp = mkdtempSync(join(tmpdir(), "schicane-content-"));
+  const fixtures = resolve(".qa");
+  mkdirSync(fixtures, { recursive: true });
+  const temp = mkdtempSync(join(fixtures, "schicane-content-"));
   const root = join(temp, "content/ai/weekly");
   mkdirSync(root, { recursive: true });
   const file = (slug, extra = "", body = "An editorial note.") =>
