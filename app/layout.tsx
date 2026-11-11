@@ -29,7 +29,14 @@ export const metadata: Metadata = {
     description,
     images: ["/social.png"],
   },
-  icons: { icon: [{ url: "/icon.svg", type: "image/svg+xml" }] },
+  icons: {
+    icon: [
+      { url: "/favicon.ico?v=2", sizes: "any" },
+      { url: "/brand/favicon-s-32.png?v=2", type: "image/png", sizes: "32x32" },
+      { url: "/brand/favicon-s.svg?v=2", type: "image/svg+xml" },
+    ],
+    apple: [{ url: "/brand/favicon-s-180.png?v=2", sizes: "180x180" }],
+  },
 };
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (

@@ -1,222 +1,222 @@
 {
   "Aarush": {
     "src": "/brand/headings/aarush.svg",
-    "width": 616.5,
-    "height": 77.1,
+    "width": 620.2,
+    "height": 79.1,
     "compact": {
       "src": "/brand/headings/aarush.svg",
-      "width": 616.5,
-      "height": 77.1
+      "width": 620.2,
+      "height": 79.1
     }
   },
   "Jaiswal": {
     "src": "/brand/headings/jaiswal.svg",
-    "width": 616.4,
-    "height": 77.1,
+    "width": 643.6,
+    "height": 79.1,
     "compact": {
       "src": "/brand/headings/jaiswal.svg",
-      "width": 616.4,
-      "height": 77.1
+      "width": 643.6,
+      "height": 79.1
     }
   },
   "Featured projects": {
     "src": "/brand/headings/featured-projects.svg",
-    "width": 1470.2,
-    "height": 77.1,
+    "width": 1532.5,
+    "height": 79.1,
     "compact": {
       "src": "/brand/headings/featured-projects-compact.svg",
-      "width": 717.7,
-      "height": 195.1
+      "width": 750.2,
+      "height": 197.1
     }
   },
   "All projects": {
     "src": "/brand/headings/all-projects.svg",
-    "width": 1027.4,
-    "height": 77.1,
+    "width": 1059.2,
+    "height": 79.1,
     "compact": {
-      "src": "/brand/headings/all-projects.svg",
-      "width": 1027.4,
-      "height": 77.1
+      "src": "/brand/headings/all-projects-compact.svg",
+      "width": 749.0,
+      "height": 197.1
     }
   },
   "About me": {
     "src": "/brand/headings/about-me.svg",
-    "width": 757.9,
-    "height": 77.1,
+    "width": 760.6,
+    "height": 79.1,
     "compact": {
       "src": "/brand/headings/about-me.svg",
-      "width": 757.9,
-      "height": 77.1
+      "width": 760.6,
+      "height": 79.1
     }
   },
   "Get in touch": {
     "src": "/brand/headings/get-in-touch.svg",
-    "width": 931.9,
-    "height": 77.2,
+    "width": 951.3,
+    "height": 79.2,
     "compact": {
       "src": "/brand/headings/get-in-touch.svg",
-      "width": 931.9,
-      "height": 77.2
+      "width": 951.3,
+      "height": 79.2
     }
   },
   "F1 Race Recaps": {
     "src": "/brand/headings/f1-race-recaps.svg",
-    "width": 1161.3,
-    "height": 76,
+    "width": 1184.0,
+    "height": 78.0,
     "compact": {
       "src": "/brand/headings/f1-race-recaps-compact.svg",
-      "width": 576.6,
-      "height": 194
+      "width": 588.6,
+      "height": 196.0
     }
   },
   "CrewBrew": {
     "src": "/brand/headings/crewbrew.svg",
-    "width": 811.3,
-    "height": 77.1,
+    "width": 818.8,
+    "height": 79.1,
     "compact": {
       "src": "/brand/headings/crewbrew.svg",
-      "width": 811.3,
-      "height": 77.1
+      "width": 818.8,
+      "height": 79.1
     }
   },
   "Reefscape": {
     "src": "/brand/headings/reefscape.svg",
-    "width": 828.9,
-    "height": 76,
+    "width": 842.2,
+    "height": 78.0,
     "compact": {
       "src": "/brand/headings/reefscape.svg",
-      "width": 828.9,
-      "height": 76
+      "width": 842.2,
+      "height": 78.0
     }
   },
   "TigerTrax": {
     "src": "/brand/headings/tigertrax.svg",
-    "width": 809.3,
-    "height": 76,
+    "width": 823.4,
+    "height": 78.0,
     "compact": {
       "src": "/brand/headings/tigertrax.svg",
-      "width": 809.3,
-      "height": 76
+      "width": 823.4,
+      "height": 78.0
     }
   },
   "Scouting PASS draft": {
     "src": "/brand/headings/scouting-pass-draft.svg",
-    "width": 1640.1,
-    "height": 77.2,
+    "width": 1674.8,
+    "height": 79.2,
     "compact": {
       "src": "/brand/headings/scouting-pass-draft-compact.svg",
-      "width": 902.5,
-      "height": 194
+      "width": 932.7,
+      "height": 196.0
     }
   },
   "AP Research Survey": {
     "src": "/brand/headings/ap-research-survey.svg",
-    "width": 1645,
-    "height": 77.1,
+    "width": 1664.7,
+    "height": 79.1,
     "compact": {
       "src": "/brand/headings/ap-research-survey-compact.svg",
-      "width": 1011.8,
-      "height": 195.1
+      "width": 1022.7,
+      "height": 197.1
     }
   },
   "FHS AI": {
     "src": "/brand/headings/fhs-ai.svg",
-    "width": 452.7,
-    "height": 76,
+    "width": 454.7,
+    "height": 78.0,
     "compact": {
       "src": "/brand/headings/fhs-ai.svg",
-      "width": 452.7,
-      "height": 76
+      "width": 454.7,
+      "height": 78.0
     }
   },
   "NextUp Stats Showdown": {
     "src": "/brand/headings/nextup-stats-showdown.svg",
-    "width": 1879.5,
-    "height": 77.2,
+    "width": 1967.4,
+    "height": 79.2,
     "compact": {
       "src": "/brand/headings/nextup-stats-showdown-compact.svg",
-      "width": 1017.6,
-      "height": 195.2
+      "width": 842.7,
+      "height": 315.2
     }
   },
   "CrewBrew FHS": {
     "src": "/brand/headings/crewbrew-fhs.svg",
-    "width": 1120,
-    "height": 77.1,
+    "width": 1127.5,
+    "height": 79.1,
     "compact": {
       "src": "/brand/headings/crewbrew-fhs-compact.svg",
-      "width": 811.3,
-      "height": 194
+      "width": 818.8,
+      "height": 196.0
     }
   },
   "Think-Co": {
     "src": "/brand/headings/think-co.svg",
-    "width": 621.1,
-    "height": 77.2,
+    "width": 649.6,
+    "height": 79.2,
     "compact": {
       "src": "/brand/headings/think-co.svg",
-      "width": 621.1,
-      "height": 77.2
+      "width": 649.6,
+      "height": 79.2
     }
   },
   "Schicane, early site": {
     "src": "/brand/headings/schicane-early-site.svg",
-    "width": 1553,
-    "height": 85.6,
+    "width": 1597.1,
+    "height": 87.6,
     "compact": {
       "src": "/brand/headings/schicane-early-site-compact.svg",
-      "width": 794.7,
-      "height": 194
+      "width": 831.8,
+      "height": 196.0
     }
   },
   "Schicane.com": {
     "src": "/brand/headings/schicane-com.svg",
-    "width": 1037.9,
-    "height": 77.2,
+    "width": 1059.3,
+    "height": 79.2,
     "compact": {
       "src": "/brand/headings/schicane-com.svg",
-      "width": 1037.9,
-      "height": 77.2
+      "width": 1059.3,
+      "height": 79.2
     }
   },
   "Runtime Components": {
     "src": "/brand/headings/runtime-components.svg",
-    "width": 1628.5,
-    "height": 77.2,
+    "width": 1647.2,
+    "height": 79.2,
     "compact": {
       "src": "/brand/headings/runtime-components-compact.svg",
-      "width": 967.8,
-      "height": 195.2
+      "width": 984.9,
+      "height": 197.2
     }
   },
   "Pair programming assignment": {
     "src": "/brand/headings/pair-programming-assignment.svg",
-    "width": 2410.3,
-    "height": 77.2,
+    "width": 2437.8,
+    "height": 79.2,
     "compact": {
       "src": "/brand/headings/pair-programming-assignment-compact.svg",
-      "width": 1090.8,
-      "height": 313.2
+      "width": 1096.6,
+      "height": 315.2
     }
   },
   "Open Lovable": {
     "src": "/brand/headings/open-lovable.svg",
-    "width": 1048.8,
-    "height": 77.2,
+    "width": 1096.5,
+    "height": 79.2,
     "compact": {
-      "src": "/brand/headings/open-lovable.svg",
-      "width": 1048.8,
-      "height": 77.2
+      "src": "/brand/headings/open-lovable-compact.svg",
+      "width": 677.3,
+      "height": 197.1
     }
   },
   "FRC 5010 practice": {
     "src": "/brand/headings/frc-5010-practice.svg",
-    "width": 1358.7,
-    "height": 77.1,
+    "width": 1384.8,
+    "height": 79.1,
     "compact": {
       "src": "/brand/headings/frc-5010-practice-compact.svg",
-      "width": 689.5,
-      "height": 194
+      "width": 710.0,
+      "height": 196.0
     }
   }
 }

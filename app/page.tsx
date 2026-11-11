@@ -96,22 +96,39 @@ export default function Home() {
         </div>
       </section>
       <F1ScrollStudy />
-      <div className="motion-marquee" aria-hidden="true">
+      <nav className="motion-marquee" aria-label="Explore areas of my work">
         <div className="marquee-track">
           {[0, 1].map((i) => (
-            <div className="marquee-copy" key={i}>
-              <span>SOFTWARE</span>
-              <b>↗</b>
-              <span>ARTIFICIAL INTELLIGENCE</span>
-              <b>↗</b>
-              <span>ROBOTICS</span>
-              <b>↗</b>
-              <span>MOTORSPORTS</span>
-              <b>↗</b>
+            <div
+              className="marquee-copy"
+              key={i}
+              aria-hidden={i === 1 ? true : undefined}
+            >
+              {[
+                { label: "SOFTWARE", href: "#projects" },
+                {
+                  label: "ARTIFICIAL INTELLIGENCE",
+                  href: "https://github.com/saarushjaiswal/f1-race-recaps",
+                },
+                {
+                  label: "ROBOTICS",
+                  href: "https://github.com/saarushjaiswal/reefscape",
+                },
+                { label: "MOTORSPORTS", href: "#f1-study" },
+              ].map((link) => (
+                <a
+                  href={link.href}
+                  key={link.label}
+                  tabIndex={i === 1 ? -1 : undefined}
+                >
+                  {link.label}
+                  <span aria-hidden="true">↗</span>
+                </a>
+              ))}
             </div>
           ))}
         </div>
-      </div>
+      </nav>
       <section
         className="featured-work shell portfolio-section"
         aria-labelledby="featured-title"
@@ -222,20 +239,21 @@ export default function Home() {
           </div>
           <div className="about-body">
             <p>
-              I’m learning Java and Python through college coursework while
-              exploring AI and software development independently. My current
-              interests include agentic AI, automation, robotics, and autonomous
-              systems.
+              I’m studying computer science and artificial intelligence at
+              Purdue University in Indianapolis, with an expected graduation in
+              May 2030.
             </p>
             <p>
-              My work ranges from school web tools and FRC robot code to a
-              project that combines race data with AI-assisted recaps. I’m also
-              a motorsports fan, which finds its way into what I build.
+              I work on autonomous-vehicle software with Purdue VIP Autoveh.
+              Before college, I led programming for FRC Team 5010, founded the
+              Fishers High School AI Club, and taught beginner programmers at
+              iCode Fishers.
             </p>
             <p>
-              Schicane is my personal space for these projects and ideas. I’m
-              interested in collaborating on software, AI, and robotics projects
-              where I can contribute and keep learning.
+              I also completed an AI internship at Blaizing Academy, working on
+              logistic regression and generative-AI product development.
+              Schicane is where I share my personal projects, including the ones
+              inspired by motorsports.
             </p>
             <a
               className="text-link"
@@ -246,13 +264,57 @@ export default function Home() {
             <dl className="about-notes">
               <div>
                 <dt>Working with</dt>
-                <dd>Java · Python · JavaScript</dd>
+                <dd>Java · Python · C++ · JavaScript · ROS 2</dd>
               </div>
               <div>
                 <dt>Exploring</dt>
-                <dd>AI agents · Automation · Autonomous systems</dd>
+                <dd>AI agents · Autonomous systems · Computer vision</dd>
+              </div>
+              <div>
+                <dt>Certification</dt>
+                <dd>AWS Certified Cloud Practitioner</dd>
               </div>
             </dl>
+            <div id="experience" className="resume-experience">
+              <h3>Experience</h3>
+              <ol>
+                <li>
+                  <div>
+                    <strong>Purdue VIP Autoveh</strong>
+                    <span>Autonomous Vehicle Software Development</span>
+                  </div>
+                  <time>Aug 2026–present</time>
+                </li>
+                <li>
+                  <div>
+                    <strong>iCode Fishers</strong>
+                    <span>Programming Instructor</span>
+                  </div>
+                  <time>Aug 2025</time>
+                </li>
+                <li>
+                  <div>
+                    <strong>Blaizing Academy</strong>
+                    <span>Artificial Intelligence Intern</span>
+                  </div>
+                  <time>Jun–Jul 2025</time>
+                </li>
+                <li>
+                  <div>
+                    <strong>Tiger Dynasty 5010</strong>
+                    <span>Programming Lead</span>
+                  </div>
+                  <time>Aug 2024–Jun 2026</time>
+                </li>
+                <li>
+                  <div>
+                    <strong>Fishers High School AI Club</strong>
+                    <span>Founder & President</span>
+                  </div>
+                  <time>Jan 2024–Jun 2026</time>
+                </li>
+              </ol>
+            </div>
           </div>
         </div>
       </section>

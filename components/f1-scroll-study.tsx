@@ -3,25 +3,79 @@ import { useEffect, useRef, useState } from "react";
 
 const views = [
   {
-    name: "Three-quarter",
+    name: "Software",
+    title: "Software & autonomy",
+    context: "Purdue VIP Autoveh / 2026–present",
+    part: "Chassis",
+    angle: "Three-quarter",
     progress: 0,
-    description: "The complete car, from the front.",
+    description:
+      "I study computer science and AI at Purdue University in Indianapolis. With VIP Autoveh, I work on autonomous-vehicle software using C and ROS 2.",
+    skills: ["C", "ROS 2", "Git CLI"],
+    evidence: [
+      { label: "Autoveh experience", href: "#experience" },
+      {
+        label: "Coursework",
+        href: "https://github.com/saarushjaiswal/runtime-components",
+      },
+    ],
   },
   {
-    name: "Side profile",
+    name: "AI & data",
+    title: "AI & data",
+    context: "Blaizing Academy / AI Intern / Summer 2025",
+    part: "Power unit",
+    angle: "Side profile",
     progress: 0.26,
-    description: "A low view of the chassis, wheels, and aero surfaces.",
+    description:
+      "My AI internship included logistic regression and generative-AI product development. F1 Race Recaps continues that work with Python, APIs, and pandas.",
+    skills: ["Python", "Logistic regression", "pandas"],
+    evidence: [
+      {
+        label: "F1 Race Recaps",
+        href: "https://github.com/saarushjaiswal/f1-race-recaps",
+      },
+      { label: "Internship", href: "#experience" },
+    ],
   },
   {
-    name: "Exploded view",
+    name: "Robotics",
+    title: "Robotics & controls",
+    context: "Tiger Dynasty 5010 / Programming Lead / 2024–2026",
+    part: "Wheels & suspension",
+    angle: "Exploded view",
     progress: 0.62,
     description:
-      "Bodywork, wings, wheels, and floor separate to reveal the structure.",
+      "I led programming for FRC Team 5010, working on autonomous navigation, computer vision, and motion planning while mentoring other programmers.",
+    skills: ["Java", "WPILib", "PhotonVision", "PathPlanner"],
+    evidence: [
+      {
+        label: "Reefscape team code",
+        href: "https://github.com/saarushjaiswal/reefscape",
+      },
+      { label: "Experience", href: "#experience" },
+    ],
   },
   {
-    name: "Overhead",
+    name: "Web tools",
+    title: "Web tools & UI/UX",
+    context: "TigerTrax / Project Lead / 2025",
+    part: "Bodywork",
+    angle: "Overhead",
     progress: 0.88,
-    description: "The component layout, seen from above.",
+    description:
+      "I led TigerTrax’s school-navigation and UI/UX work with Haneef Najum, and helped build CrewBrew’s school-ordering project.",
+    skills: ["JavaScript", "HTML/CSS", "Firebase"],
+    evidence: [
+      {
+        label: "TigerTrax",
+        href: "https://github.com/saarushjaiswal/TigerTrax",
+      },
+      {
+        label: "CrewBrew",
+        href: "https://github.com/saarushjaiswal/CrewBrewMain",
+      },
+    ],
   },
 ];
 
@@ -91,7 +145,7 @@ export function F1ScrollStudy() {
         renderer.toneMapping = THREE.ACESFilmicToneMapping;
         renderer.toneMappingExposure = 1.3;
         renderer.shadowMap.enabled = true;
-        renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+        renderer.shadowMap.type = THREE.PCFShadowMap;
         renderer.domElement.setAttribute("aria-hidden", "true");
         host.appendChild(renderer.domElement);
         const scene = new THREE.Scene();
@@ -118,7 +172,7 @@ export function F1ScrollStudy() {
         scene.add(car);
         const ground = new THREE.Mesh(
           new THREE.PlaneGeometry(35, 35),
-          new THREE.ShadowMaterial({ opacity: 0.2 }),
+          new THREE.ShadowMaterial({ opacity: 0.2, depthWrite: false }),
         );
         ground.rotation.x = -Math.PI / 2;
         ground.position.y = -0.66;
@@ -141,18 +195,64 @@ export function F1ScrollStudy() {
           motionOn = !matchMedia("(prefers-reduced-motion: reduce)").matches,
           frame = 0,
           lastProgress = -1;
+        const bounds = new THREE.Box3();
+        const center = new THREE.Vector3();
+        const corner = new THREE.Vector3();
         const draw = (value: number) => {
           const p = Math.min(1, Math.max(0, value));
           timeline.seek(p * timeline.duration, true);
           explode(pose.explosion);
+          bounds.setFromObject(car);
+          bounds.getCenter(center);
           camera.position.set(
-            Math.sin(pose.azimuth) * 13 * Math.cos(pose.elevation),
-            13 * Math.sin(pose.elevation),
-            Math.cos(pose.azimuth) * 13 * Math.cos(pose.elevation),
+            center.x + Math.sin(pose.azimuth) * 13 * Math.cos(pose.elevation),
+            center.y + 13 * Math.sin(pose.elevation),
+            center.z + Math.cos(pose.azimuth) * 13 * Math.cos(pose.elevation),
           );
-          camera.lookAt(0, 0.25, 0);
+          camera.lookAt(center);
+          camera.updateMatrixWorld(true);
+          const aspect = host.clientWidth / Math.max(1, host.clientHeight);
+          let extentX = 0,
+            extentY = 0;
+          for (const x of [bounds.min.x, bounds.max.x]) {
+            for (const y of [bounds.min.y, bounds.max.y]) {
+              for (const z of [bounds.min.z, bounds.max.z]) {
+                corner.set(x, y, z).applyMatrix4(camera.matrixWorldInverse);
+                extentX = Math.max(extentX, Math.abs(corner.x));
+                extentY = Math.max(extentY, Math.abs(corner.y));
+              }
+            }
+          }
+          // Fit every component inside the viewport, including narrow layouts.
+          const halfHeight = Math.max(
+            1.65,
+            extentY * 1.1,
+            (extentX / aspect) * 1.1,
+          );
+          camera.left = -halfHeight * aspect;
+          camera.right = halfHeight * aspect;
+          camera.top = halfHeight;
+          camera.bottom = -halfHeight;
+          camera.updateProjectionMatrix();
           renderer.render(scene, camera);
           host.dataset.view = String(p);
+          host.dataset.exploded = String(pose.explosion > 0.4);
+          const e = pose.explosion;
+          const labelPositions: Record<string, number[]> = {
+            data: [1.2, 0.22, 0],
+            body: [1.3, 1 + e * 1.15 - 0.6, 0],
+            floor: [0.2, 0.1 - e * 0.6 - 0.6, 0],
+            wheel: [-1.92 - e * 0.32, 0.55 + e * 0.05 - 0.6, 1.34 + e],
+          };
+          host
+            .querySelectorAll<HTMLElement>(".f1-part-label")
+            .forEach((label) => {
+              const point = labelPositions[label.dataset.part ?? ""];
+              if (!point) return;
+              corner.set(point[0], point[1], point[2]).project(camera);
+              label.style.left = `${Math.max(60, Math.min(host.clientWidth - 70, ((corner.x + 1) * host.clientWidth) / 2))}px`;
+              label.style.top = `${Math.max(18, Math.min(host.clientHeight - 18, ((1 - corner.y) * host.clientHeight) / 2 - 18))}px`;
+            });
           if (Math.abs(p - lastProgress) > 0.003) {
             lastProgress = p;
             setProgress(p);
@@ -173,13 +273,6 @@ export function F1ScrollStudy() {
         const resize = () => {
           const width = host.clientWidth,
             height = host.clientHeight;
-          const worldWidth = width < 700 ? 10.9 : 12.1;
-          const aspect = width / Math.max(1, height);
-          camera.left = -worldWidth / 2;
-          camera.right = worldWidth / 2;
-          camera.top = worldWidth / aspect / 2;
-          camera.bottom = -worldWidth / aspect / 2;
-          camera.updateProjectionMatrix();
           renderer.setSize(width, height);
           draw(lastProgress < 0 ? 0 : lastProgress);
         };
@@ -265,25 +358,78 @@ export function F1ScrollStudy() {
       <div className="f1-stage">
         <div className="f1-stage-heading shell">
           <div>
-            <span className="eyebrow">SCHICANE / MOTION STUDY</span>
-            <h2 id="f1-title">F1, in motion.</h2>
+            <span className="eyebrow">SCHICANE / SKILLS & PROJECTS</span>
+            <h2 id="f1-title">F1 motion study</h2>
           </div>
           <p>
-            Scroll to rotate.
+            Scroll through my skills.
             <br />
-            Keep going to take it apart.
+            Select a part to see the project behind it.
           </p>
         </div>
         <div className="f1-view-label">
           <span>0{stage + 1} / 04</span>
-          <strong>{views[stage].name}</strong>
+          <strong>{views[stage].part}</strong>
         </div>
+        <aside className="f1-story" aria-live="polite">
+          <h3>{views[stage].title}</h3>
+          <span className="f1-role">{views[stage].context}</span>
+          <p>{views[stage].description}</p>
+          <ul aria-label="Related skills">
+            {views[stage].skills.map((skill) => (
+              <li key={skill}>{skill}</li>
+            ))}
+          </ul>
+          <div className="f1-evidence">
+            {views[stage].evidence.map((link) => (
+              <a key={link.href} href={link.href}>
+                {link.label} <span aria-hidden="true">↗</span>
+              </a>
+            ))}
+          </div>
+          <a className="f1-background-link" href="#about">
+            More about my background <span aria-hidden="true">↘</span>
+          </a>
+        </aside>
         <div
           ref={viewport}
           className="f1-canvas"
-          role="img"
-          aria-label={`Interactive open-wheel concept car. ${views[stage].description}`}
-        />
+          role="group"
+          aria-label={`Open-wheel concept car: ${views[stage].angle}`}
+        >
+          <a
+            className="f1-part-label"
+            data-part="data"
+            href="https://github.com/saarushjaiswal/f1-race-recaps"
+            aria-label="AI and data: F1 Race Recaps on GitHub"
+          >
+            AI & data ↗
+          </a>
+          <a
+            className="f1-part-label"
+            data-part="body"
+            href="https://github.com/saarushjaiswal/CrewBrewMain"
+            aria-label="Web tools: CrewBrew on GitHub"
+          >
+            Web tools ↗
+          </a>
+          <a
+            className="f1-part-label"
+            data-part="floor"
+            href="https://github.com/saarushjaiswal/runtime-components"
+            aria-label="Software: coursework on GitHub"
+          >
+            Software ↗
+          </a>
+          <a
+            className="f1-part-label"
+            data-part="wheel"
+            href="https://github.com/saarushjaiswal/reefscape"
+            aria-label="Robotics: Reefscape team code on GitHub"
+          >
+            Robotics ↗
+          </a>
+        </div>
         {!ready && (
           <div className="f1-fallback-wrap">
             <CarFallback />
@@ -296,8 +442,8 @@ export function F1ScrollStudy() {
         )}
         <div className="f1-stage-footer shell">
           <div className="f1-caption">
-            <p>{views[stage].description}</p>
-            <span>A stylized Schicane concept car.</span>
+            <p>{views[stage].angle}</p>
+            <span>Schicane concept model</span>
           </div>
           <a href="#projects" className="f1-skip">
             Skip to projects <span aria-hidden="true">↘</span>
@@ -307,7 +453,7 @@ export function F1ScrollStudy() {
           <div
             className="f1-view-buttons"
             role="group"
-            aria-label="Car viewpoints"
+            aria-label="Explore skills and related car views"
           >
             {views.map((view, index) => (
               <button
@@ -331,7 +477,7 @@ export function F1ScrollStudy() {
               step="1"
               value={Math.round(progress * 1000)}
               aria-label="Car animation progress"
-              aria-valuetext={views[stage].name}
+              aria-valuetext={`${views[stage].title}: ${views[stage].angle}`}
               disabled={!ready}
               onChange={(event) =>
                 seek.current(Number(event.target.value) / 1000)

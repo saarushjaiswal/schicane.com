@@ -37,3 +37,11 @@ All accessible repository metadata was reviewed. Populated public repositories h
 Private repository contents and names are not included in the website or source notes. No external project demos are claimed as working without verification. All project CTAs point to reviewed, public GitHub repositories.
 
 No copyright line, business registration, awards, customer counts, testimonials, availability promises, or legal guarantees were invented. The privacy notice describes this static site's actual behavior. There is no sale, payment flow, or user account requiring refund or account terms.
+
+## Résumé-backed skills story
+
+The owner supplied their September 2026 résumé during the portfolio update. Professional details used in the copy: Purdue University in Indianapolis (computer science / artificial intelligence, expected May 2030); Purdue VIP Autoveh (August 2026–present); iCode Fishers programming instruction (August 2025); Blaizing Academy AI internship (June–July 2025); Tiger Dynasty 5010 Programming Lead (August 2024–June 2026); Fishers High School AI Club Founder & President (January 2024–June 2026); AWS Certified Cloud Practitioner.
+
+The car chapters now connect chassis/software and autonomy, power-unit/AI and data, wheel assemblies/robotics, and bodywork/web tools. Each chapter links to related public work or the experience section. This is a visual portfolio navigation device, not a claim of professional race-car engineering. The original résumé and private contact details are not distributed.
+
+The font-outline export was regenerated using FontTools after detecting invalid coordinates from the first parser. Verification rejects non-finite SVG path coordinates. Project names use ordinary wrapping Raleway text, and heading reveal animations no longer clip the artwork. The topic marquee now contains real links and pauses on hover/focus. Favicon resources use new versioned URLs, with SVG, PNG, ICO, and Apple touch variants derived from the supplied S artwork.

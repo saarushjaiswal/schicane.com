@@ -15,7 +15,12 @@ export function HeadingArtwork({ text }: { text: string }) {
     >
       <span className="heading-readable">{text} </span>
       <picture aria-hidden="true">
-        <source media="(max-width: 700px)" srcSet={entry.compact.src} />
+        <source
+          media="(max-width: 700px)"
+          srcSet={entry.compact.src}
+          width={entry.compact.width}
+          height={entry.compact.height}
+        />
         <img src={entry.src} alt="" width={entry.width} height={entry.height} />
       </picture>
     </span>

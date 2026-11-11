@@ -1,5 +1,4 @@
 "use client";
-import { HeadingArtwork } from "@/components/heading-artwork";
 import { useState } from "react";
 import { projects, emptyRepositories, repoUrl } from "@/lib/projects";
 const categories = [
@@ -60,7 +59,7 @@ export function ProjectDirectory() {
             <div className="project-details">
               <h3>
                 <a href={repoUrl(p.repo)}>
-                  <HeadingArtwork text={p.name} />
+                  {p.name}
                   <span aria-hidden="true"> ↗</span>
                 </a>
               </h3>

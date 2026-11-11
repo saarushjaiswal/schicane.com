@@ -99,9 +99,12 @@ export function MotionController() {
       }),
     ];
     const visibleLoops = new Set<number>();
+    let marqueeHeld = false;
     const visibility = () => {
       loops.forEach((animation, index) =>
-        document.hidden || !visibleLoops.has(index)
+        document.hidden ||
+        !visibleLoops.has(index) ||
+        (index === 3 && marqueeHeld)
           ? animation.pause()
           : animation.resume(),
       );
@@ -126,6 +129,24 @@ export function MotionController() {
     });
     loopGroups.forEach((_, target) => loopObserver.observe(target));
     document.addEventListener("visibilitychange", visibility);
+    const marquee = body.querySelector(".motion-marquee");
+    const holdMarquee = () => {
+      marqueeHeld = true;
+      visibility();
+    };
+    const releaseMarquee = (event: Event) => {
+      if (
+        event instanceof FocusEvent &&
+        marquee?.contains(event.relatedTarget as Node | null)
+      )
+        return;
+      marqueeHeld = false;
+      visibility();
+    };
+    marquee?.addEventListener("pointerenter", holdMarquee);
+    marquee?.addEventListener("pointerleave", releaseMarquee);
+    marquee?.addEventListener("focusin", holdMarquee);
+    marquee?.addEventListener("focusout", releaseMarquee);
 
     const seen = new WeakSet<Element>();
     const observer = new IntersectionObserver(
@@ -141,13 +162,6 @@ export function MotionController() {
             duration: 850,
             ease: "out(4)",
           });
-          if (target.matches(".portfolio-section-heading")) {
-            run(target.querySelectorAll(".heading-art"), {
-              clipPath: ["inset(0 100% 0 0)", "inset(0 0% 0 0)"],
-              duration: 1100,
-              ease: "out(3)",
-            });
-          }
         });
       },
       { threshold: 0.08, rootMargin: "0px 0px -24px 0px" },
@@ -203,6 +217,10 @@ export function MotionController() {
       body.removeEventListener("pointerover", over);
       body.removeEventListener("pointerout", out);
       document.removeEventListener("visibilitychange", visibility);
+      marquee?.removeEventListener("pointerenter", holdMarquee);
+      marquee?.removeEventListener("pointerleave", releaseMarquee);
+      marquee?.removeEventListener("focusin", holdMarquee);
+      marquee?.removeEventListener("focusout", releaseMarquee);
       window.removeEventListener("scroll", scroll);
       window.removeEventListener("resize", scroll);
       cancelAnimationFrame(frame);

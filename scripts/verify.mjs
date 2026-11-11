@@ -32,15 +32,26 @@ for (const file of [
   "brand/schicane-gold-symbol.png",
   "fonts/raleway-variable.ttf",
   "fonts/raleway-OFL.txt",
+  "favicon.ico",
+  "brand/favicon-s.svg",
+  "brand/favicon-s-32.png",
+  "brand/favicon-s-180.png",
 ])
   if (!existsSync(join(root, file))) errors.push(`Missing ${file}`);
 if (readFileSync(join(root, "CNAME"), "utf8").trim() !== "schicane.com")
   errors.push("Custom domain changed");
 const html = walk(root).filter((f) => f.endsWith(".html"));
+for (const file of walk(join(root, "brand/headings"))) {
+  const svg = load(readFileSync(file, "utf8"), { xmlMode: true });
+  svg("path[d]").each((_, path) => {
+    if (/NaN|Infinity/i.test(svg(path).attr("d") ?? ""))
+      errors.push(`Invalid heading path coordinates: ${file}`);
+  });
+}
 if (walk(root).some((file) => /ethnocentric.*\.(otf|ttf|woff2?)$/i.test(file)))
   errors.push("The desktop-only Ethnocentric font must not be distributed");
 const home = load(readFileSync(join(root, "index.html"), "utf8"));
-for (const id of ["projects", "about", "contact"]) {
+for (const id of ["f1-study", "projects", "about", "contact"]) {
   if (!home(`[id="${id}"]`).length) errors.push(`Home missing section: ${id}`);
 }
 if (home(".project-row").length !== 16)
@@ -48,6 +59,13 @@ if (home(".project-row").length !== 16)
     "Home must render all 16 populated project entries without JavaScript",
   );
 if (!home("input[type=search]").length) errors.push("Project search missing");
+if (
+  home(".f1-view-buttons button").length !== 4 ||
+  !home(".f1-scrub input[type=range]").length
+)
+  errors.push("Car study is missing its manual viewing controls");
+if (!home(".f1-fallback").length)
+  errors.push("Car study requires a static fallback");
 if (!home("a[href='mailto:saarushjaiswal@gmail.com']").length)
   errors.push("Contact email missing");
 if (home("footer").text().includes("©"))

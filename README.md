@@ -47,3 +47,15 @@ The content direction references https://www.zachjordan.io/: a direct personal i
 ## Animation
 
 Anime.js sequences the hero entrance, heading reveals, project rows, and interactive link motion. The hero emblem, topic marquee, and workflow accents loop only while visible. A fixed pause control disables the animation layer, and the OS reduced-motion preference disables it by default. Motion preferences stay in React state and are not saved to browser storage. All content is visible in the static HTML without JavaScript.
+
+## F1 scroll study
+
+The F1 study uses an original procedural open-wheel concept model in lib/f1-model.ts. Three.js renders the geometry; Anime.js interpolates camera angles and component separation through a scroll-scrubbed timeline. No third-party car asset, team livery, or external 3D service is used.
+
+components/f1-scroll-study.tsx lazy-loads the renderer near the section, frames the car to the available viewport, provides four viewpoint buttons and a keyboard-accessible range control, and disposes its scene and GPU resources on unmount. The global motion pause control freezes automatic scroll motion. Reduced-motion layouts use a single stationary section with manual controls. A static concept illustration remains available if WebGL cannot initialize.
+
+References read during implementation: Anime.js getting-started, React integration, JavaScript-object animation, scope cleanup, timeline seek, and ScrollObserver documentation. The reference site's mechanical assembly inspired the scroll narrative; its assets and model were not copied.
+
+The car study is a résumé-backed navigation device: software/autonomy, AI/data, robotics/controls, and web tools, each with real project or experience links. Keep these chapter descriptions aligned with the owner's supplied résumé and public repositories. The original résumé is not published.
+
+Project names use wrapping Raleway text. Retained display-heading artwork was regenerated with FontTools; verification checks SVG paths for invalid coordinates. Do not restore clipping-mask heading reveals. Topic marquee arrows are actual links; the strip pauses for mouse and keyboard interaction.

@@ -10,4 +10,7 @@
 - Preserve project attributions and distinguish forks, team code, coursework, and empty repositories.
 - Newsletter work is paused.
 - The user subsequently requested an animation-heavy design inspired by Anime.js. Use Anime.js for sequenced entrances, scroll reveals, and interactive motion; keep the pause control and respect reduced-motion preferences. Pause continuous animation when it is offscreen or the document is hidden. Earlier aversion to hover animations is superseded by this request.
+- The latest visual focus is the original scroll-driven 3D F1-style car: multiple angles, an exploded component view, and manual viewpoint controls. Keep the car usable on narrow screens and retain the static fallback.
+- The owner emphasized keeping the entire F1 rotation and exploded-view motion study as the site's central feature. Connect it to their résumé and skills through surrounding narrative and project links; never replace it with static résumé content. 2026-regulation styling is deferred.
+- The user requested safe, tested checkpoint pushes so progress is saved live. Author commits as Codex using per-command Git identity; do not change global Git settings.
 - Run the production build, type check, and static verification for site changes. Review responsive behavior when layout or typography changes.
