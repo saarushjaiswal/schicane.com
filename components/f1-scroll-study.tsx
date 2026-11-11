@@ -193,6 +193,7 @@ export function F1ScrollStudy() {
           .add(pose, { explosion: 0.28, duration: 600 }, 3400);
         let inView = true,
           motionOn = !matchMedia("(prefers-reduced-motion: reduce)").matches,
+          manualView = false,
           frame = 0,
           lastProgress = -1;
         const bounds = new THREE.Box3();
@@ -260,7 +261,7 @@ export function F1ScrollStudy() {
         };
         const automatic = () => {
           frame = 0;
-          if (disposed || !inView || !motionOn) return;
+          if (disposed || !inView || !motionOn || manualView) return;
           const bounds = root.getBoundingClientRect();
           const distance = Math.max(1, root.offsetHeight - innerHeight);
           draw(-bounds.top / distance);
@@ -269,7 +270,49 @@ export function F1ScrollStudy() {
           if (!frame && inView && motionOn)
             frame = requestAnimationFrame(automatic);
         };
-        seek.current = draw;
+        seek.current = (value) => {
+          manualView = true;
+          const stageBounds = root
+            .querySelector(".f1-stage")
+            ?.getBoundingClientRect();
+          if (
+            stageBounds &&
+            (stageBounds.top < -24 || stageBounds.bottom > innerHeight + 24)
+          ) {
+            window.scrollTo({
+              top: root.getBoundingClientRect().top + scrollY,
+              behavior: motionOn ? "smooth" : "instant",
+            });
+          }
+          draw(value);
+        };
+        const resumeScrolling = () => {
+          manualView = false;
+        };
+        const resumeKeyboardScrolling = (event: KeyboardEvent) => {
+          if (
+            event.target instanceof Element &&
+            event.target.closest("input,textarea,select,[contenteditable]")
+          )
+            return;
+          if (
+            [
+              "PageDown",
+              "PageUp",
+              "ArrowDown",
+              "ArrowUp",
+              "Home",
+              "End",
+              " ",
+            ].includes(event.key)
+          )
+            manualView = false;
+        };
+        window.addEventListener("wheel", resumeScrolling, { passive: true });
+        window.addEventListener("touchstart", resumeScrolling, {
+          passive: true,
+        });
+        window.addEventListener("keydown", resumeKeyboardScrolling);
         const resize = () => {
           const width = host.clientWidth,
             height = host.clientHeight;
@@ -313,6 +356,9 @@ export function F1ScrollStudy() {
           visibility.disconnect();
           motion.disconnect();
           window.removeEventListener("scroll", request);
+          window.removeEventListener("wheel", resumeScrolling);
+          window.removeEventListener("touchstart", resumeScrolling);
+          window.removeEventListener("keydown", resumeKeyboardScrolling);
           document.removeEventListener("visibilitychange", onVisibility);
           renderer.domElement.removeEventListener("webglcontextlost", lost);
           dispose();

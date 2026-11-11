@@ -2837,3 +2837,8 @@ h3 {
     top: 150px;
   }
 }
+@media (min-width: 701px) {
+  .f1-scrub {
+    margin-right: 150px;
+  }
+}
